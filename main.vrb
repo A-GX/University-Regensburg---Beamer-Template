@@ -1,0 +1,12 @@
+\frametitle{Look}
+\begin{itemize}
+    \item To insert a final slide with the title and final thanks, use \verb|\backmatter|.
+    \begin{itemize}
+        \item The colour of slides' title and colour boxes is managed by the Theme. Modify \verb|\themecolor{Red}| with the theme fitting your faculty (see slides 10 to 19)
+    \end{itemize}
+    \item The aspect ratio defaults to 16:9, and you should not change it to 4:3 for old projectors as it is inherently impossible to perfectly convert a 16:9 presentation to 4:3 one; spacings \emph{will} break
+    \begin{itemize}
+        \item The \texttt{aspectratio} argument to the \texttt{beamer} class is overridden by the SINTEF theme
+        \item If you \emph{really} know what you are doing, check the package code and look for the \texttt{geometry} class.
+    \end{itemize}
+\end{itemize}
