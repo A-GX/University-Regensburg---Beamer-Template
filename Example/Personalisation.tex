@@ -1,0 +1,107 @@
+\section{Personalisation} \label{Themes}
+
+
+\begin{frame}[fragile]{Available Themes}
+    Here are the 9 available themes :
+    {\footnotesize \begin{itemize}
+        \item Black\&White: \testcolor{black}, \testcolor{ur-background-grey}, \testcolor{white}
+        \item Red: \testcolor{ur-rot}, \testcolor{urBlock-rot-title}, \testcolor{urBlock-rot-main}
+        \item Yellow: \testcolor{ur-yellow}, \testcolor{urBlock-yellow-title}, \testcolor{urBlock-yellow-main}
+        \item GreenBrown: \testcolor{ur-greenBrown}, \testcolor{urBlock-greenBrown-title}, \testcolor{urBlock-greenBrown-main}
+        \item DarkBlue: \testcolor{ur-darkBlue}, \testcolor{urBlock-darkBlue-title}, \testcolor{urBlock-darkBlue-main}
+        \item Orange: \testcolor{ur-orange}, \testcolor{urBlock-orange-title}, \testcolor{urBlock-orange-main}
+        \item BlueGreen: \testcolor{ur-blueGreen}, \testcolor{urBlock-blueGreen-title}, \testcolor{urBlock-blueGreen-main}
+        \item Green: \testcolor{ur-green}, \testcolor{urBlock-green-title}, \testcolor{urBlock-green-main}
+        \item Blue: \testcolor{ur-blue}, \testcolor{urBlock-blue-title}, \testcolor{urBlock-blue-main}
+    \end{itemize}}
+
+    change the theme by updating \verb|\themecolor{theme}| in main.tex. \alert{Try to match the theme with your faculty's colour}
+    
+\end{frame}
+
+%=======================================================================
+
+\input{Example/blocks and themes}
+
+%=======================================================================
+
+\begin{frame}{Adapting the template}
+    If you are not familiar with beamer, I strongly advise against modifying the \textbf{Config/style.sty} file.
+    
+    \vspace{\baselineskip}
+    
+    If you are not satisfied with any of the available theme, just modify \textbf{Config/colors.sty} as follows:
+    \begin{itemize}
+        \item Choose one theme (ex: Red)
+        \item Modify the colors associated to the theme (ex: \testcolor{\useMainColor}, \testcolor{\useBlockTitleColor} and \testcolor{\useBlockMainColor})
+    \end{itemize}
+\end{frame}
+
+
+%=======================================================================
+
+\begin{frame}[fragile]{Using Colours}
+\begin{itemize}[<alert@2>]
+  \item You can use colours with the
+        \verb|\textcolor{<color name>}{text}| command
+  \item The colours are defined in the \texttt{Config/colors} package:
+  \begin{itemize}
+  \item Primary colours: \testcolor{ur-grey} and its sidekick 
+  \testcolor{ur-background-grey}
+  \item Faculty's colours: see page 10
+  \end{itemize}
+  \item Do \emph{not} abuse colours: \verb|\emph{}| is usually enough
+  \item Use \verb|\alert{}| to bring the \alert<3->{focus} somewhere
+  \item <3- | alert@3> If you highlight too much, you don't highlight at all!
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Adding images}
+\begin{columns}  % adding [onlytextwidth] the left margins will be set correctly
+\begin{column}{0.7\textwidth}
+Adding images works like in normal \LaTeX:
+\begin{block}{Code for Adding Images}
+\begin{verbatim}
+\usepackage{graphicx}
+% ...
+\includegraphics[width=\textwidth]
+{Config/logo_RGB}
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=\textwidth]{Config/logo_transparent.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Splitting in Columns}
+Splitting the page is easy and common; typically, one side has a picture and the other text:
+\begin{columns}  % adding [onlytextwidth] the left margins will be set correctly
+\begin{column}{0.6\textwidth}
+This is the first column
+\end{column}
+\begin{column}{0.3\textwidth}
+And this the second
+\end{column}
+\end{columns}
+\begin{block}{Column Code}
+\begin{verbatim}
+\begin{columns} 
+    % adding [onlytextwidth] the left margins will be set correctly
+    \begin{column}{0.6\textwidth}
+        This is the first column
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        And this the second
+    \end{column}
+    % There could be more!
+\end{columns}
+\end{verbatim}
+\end{block}
+
+\end{frame}

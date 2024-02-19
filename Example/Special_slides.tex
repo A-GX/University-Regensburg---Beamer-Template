@@ -1,0 +1,44 @@
+%=======================================================================
+
+\begin{sidepic}{Config/SidePic}{Side-Picture Slides with title way too long}
+\begin{itemize}
+    \item Opened with \texttt{$\backslash$begin\{sidepic\}\{<image>\}\{<title>\}}
+    \item Otherwise, \texttt{sidepic} works just like \texttt{frame}
+    (once again, picture from \href{https://www.shutterstock.com/en/g/lantoine}{L'Antoine})
+\end{itemize}
+\end{sidepic}
+
+%=======================================================================
+
+\begin{frame}
+\frametitle{Fonts}
+\begin{itemize}
+    \item The paramount task of fonts is being readable
+    \item There are good ones...
+      \begin{itemize}
+          \item {\textrm{Use serif fonts only with high-definition projectors}}
+          \item {\textsf{Use sans-serif fonts otherwise (or if you simply prefer them)}}
+      \end{itemize}
+    \item ... and not so good ones:
+    \begin{itemize}
+        \item {\texttt{Never use monospace for normal text}}
+        \item {\frakfamily Gothic, calligraphic or weird fonts: should always: be avoided}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Look}
+\begin{itemize}
+    \item To insert a final slide with the title and final thanks, use \verb|\backmatter|.
+    \begin{itemize}
+        \item The colour of slides' title and colour boxes is managed by the Theme. Modify \verb|\themecolor{Red}| with the theme fitting your faculty (see slides 10 to 19)
+    \end{itemize}
+    \item The aspect ratio defaults to 16:9, and you should not change it to 4:3 for old projectors as it is inherently impossible to perfectly convert a 16:9 presentation to 4:3 one; spacings \emph{will} break
+    \begin{itemize}    
+        \item The \texttt{aspectratio} argument to the \texttt{beamer} class is overridden by the SINTEF theme
+        \item If you \emph{really} know what you are doing, check the package code and look for the \texttt{geometry} class.
+    \end{itemize}
+\end{itemize}
+\end{frame}
