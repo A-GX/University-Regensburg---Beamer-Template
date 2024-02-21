@@ -1,0 +1,122 @@
+\newcommand{\MainColor}[1]{\def \useMainColor {#1}}
+\newcommand{\BlockTitleColor}[1]{\def \useBlockTitleColor {#1}}
+\newcommand{\BlockTitleWriteColor}[1]{\def \useBlockTitleWriteColor {#1}}
+\newcommand{\BlockMainColor}[1]{\def \useBlockMainColor {#1}}
+\newcommand{\ImageBackground}[1]{\def \useBackground {\includegraphics[width=\paperwidth,height=\paperheight]{#1}}}
+\newcommand{\ImageTitle}[1]{\def \useBackgroundTitle {\includegraphics[width=\paperwidth,height=\paperheight]{#1}}}
+\newcommand{\ImageSec}[1]{\def \useBackgroundSec {\includegraphics[width=\paperwidth,height=\paperheight]{#1}}}
+\newcommand{\ImageBack}[1]{\def \useBackgroundBack {\includegraphics[width=\paperwidth,height=\paperheight]{#1}}}
+
+% #===> Siegel visibility
+\newcommand{\visibilitySiegel}[1]{
+    \ifstrequal{#1}{0} {
+        \ImageBackground{Config/background2.png}
+        \ImageTitle{Config/background_title2.png}
+        \ImageSec{Config/background_chapter2.png}
+        \ImageBack{Config/background_backmatter2.png}
+    }{\ifstrequal{#1}{1}{
+        \ImageBackground{Config/background.png}
+        \ImageTitle{Config/background_title.png}
+        \ImageSec{Config/background_chapter.png}
+        \ImageBack{Config/background_backmatter.png}
+        }{
+            \ImageBackground{Config/background1.png}
+            \ImageTitle{Config/background_title1.png}
+            \ImageSec{Config/background_chapter1.png}
+            \ImageBack{Config/background_backmatter1.png}
+        }
+    }
+}
+
+\visibilitySiegel{0}
+
+% #===> CREATE UR-THEME COLOR
+\newcommand{\themecolor}[1]{
+	\ifstrequal{#1}{Red}{%
+        \MainColor{ur-rot}
+        \BlockMainColor{urBlock-rot-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-rot-title}
+	}{\ifstrequal{#1}{Yellow}{
+        \MainColor{ur-yellow}
+        \BlockMainColor{urBlock-yellow-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-yellow-title}
+        }{\ifstrequal{#1}{GreenBrown}{
+            \MainColor{ur-greenBrown}
+            \BlockMainColor{urBlock-greenBrown-main}
+            \BlockTitleWriteColor{white}
+            \BlockTitleColor{urBlock-greenBrown-title}
+            }{\ifstrequal{#1}{DarkBlue}{
+                \MainColor{ur-darkBlue}
+                \BlockMainColor{urBlock-darkBlue-main}
+                \BlockTitleWriteColor{white}
+                \BlockTitleColor{urBlock-darkBlue-title}
+                }{\ifstrequal{#1}{Orange}{
+                    \MainColor{ur-orange}
+                    \BlockMainColor{urBlock-orange-main}
+                    \BlockTitleWriteColor{white}
+                    \BlockTitleColor{urBlock-orange-title}
+                    }{\ifstrequal{#1}{BlueGreen}{
+                        \MainColor{ur-blueGreen}
+                        \BlockMainColor{urBlock-blueGreen-main}
+                        \BlockTitleWriteColor{white}
+                        \BlockTitleColor{urBlock-blueGreen-title}
+                        }{\ifstrequal{#1}{Green}{
+                            \MainColor{ur-green}
+                            \BlockMainColor{urBlock-green-main}
+                            \BlockTitleWriteColor{white}
+                            \BlockTitleColor{urBlock-green-title}
+                            }{\ifstrequal{#1}{Blue}{
+                                \MainColor{ur-blue}
+                                \BlockMainColor{urBlock-blue-main}
+                                \BlockTitleWriteColor{white}
+                                \BlockTitleColor{urBlock-blue-title}
+                                }{\ifstrequal{#1}{Test}{
+                                    \MainColor{ur-test}
+                                    \BlockMainColor{urBlock-test-main}
+                                    \BlockTitleWriteColor{black}
+                                    \BlockTitleColor{urBlock-test-title}
+                                    }{% else: Black&White
+                                        \MainColor{black}
+                                        \BlockTitleColor{ur-grey}
+                                        \BlockTitleWriteColor{ur-background-grey}
+                                        \BlockMainColor{white}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+	}
+    }
+}
+\themecolor{Black&White}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                   THEMED COLOR BLOCKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{themedTitleBlock}[1]{%
+	\begingroup
+	\setbeamercolor{block title}{fg=\useBlockTitleWriteColor,bg=\useBlockTitleColor}
+	\setbeamercolor{block body} {fg=black,bg=\useBlockMainColor}
+	\begin{block}{#1}
+	}{%
+	\end{block}
+	\endgroup
+}
+
+\newenvironment{themedColorBlock}[1]{%
+	\begingroup
+	\setbeamercolor{block title}{fg=\useBlockTitleWriteColor,bg=\useBlockTitleColor}
+	\setbeamercolor{block body} {fg=\useBlockTitleWriteColor,bg=\useBlockTitleColor}
+	\begin{block}{#1}
+	}{%
+	\end{block}
+	\endgroup
+}
