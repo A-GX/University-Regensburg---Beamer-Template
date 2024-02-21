@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{Introduction}{4}{0}{1}
-\beamer@sectionintoc {2}{Personalisation}{15}{0}{2}
