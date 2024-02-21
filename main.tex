@@ -2,7 +2,8 @@
 \usepackage{Config/style}
 
 
-% Use the theme color best suited for you fakultät. Available themes (case sensitive) : Red, Yellow, GreenBrown, DarkBlue, Black&White (default)
+% Use the theme color best suited for you fakultät. Available themes (case sensitive) : Red, Yellow, GreenBrown, 
+% DarkBlue, Black&White (default)
 \themecolor{Red}
 
 % Change visibility of the siegel in the background. Value can be 0, 1 or 2
@@ -11,9 +12,18 @@
 % ###===> Information to be included in the title page:
 \title{A basic presentation template}
 \subtitle{for the Universität Regensburg}
-% You can comment what is not needed
-\Author{Antoine Gansel}
+
+% If you are multiple authors/presentators :
+%   1. Comment \singleAuthor and use \multAuthors as in example
+%   2. a- If you are from the same faculty/institute, you can use \AuthorInstitute{...}
+%         instead if of \inst{...}
+%      b- if you are from diferent institutes, comment the line \AuthorInstitute{...} and use
+%         \inst{...} together with \institute{...} ligne 28
+\singleAuthor{Antoine Gansel}
 \AuthorInstitute{Lehrstuhl für Datensicherheit und Kryptographie}
+%\multAuthors{Antoine Gansel\inst{1} \and Jullie Cailler\inst{2}}
+
+% You can comment what is not needed
 \Collaborators{{Julie Cailler\inst{2}}} 
 \Supervisors{Jane Doe\inst{1} \and {John Doe\inst{2}}}
 \institute{{\inst{1}UR - Lehrstuhl für Datensicherheit und Kryptographie}\\ {\inst{2}UR - Lehrstuhl für Theoretische Informatik}}

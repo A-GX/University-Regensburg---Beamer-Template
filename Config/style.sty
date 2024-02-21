@@ -27,6 +27,7 @@
 \usepackage[absolute,overlay]{textpos}
 
 
+
 %\usepackage{etoolbox}
 
 \newcommand{\MainColor}[1]{\def \useMainColor {#1}}
@@ -134,14 +135,18 @@
 
 
 % #==> STYLE TITLE PAGE
-\newcommand{\Author}[1]{\def \insertAuthor {\ifstrempty{#1}{}{#1}}}
+\newcommand{\singleAuthor}[1]{\def\insertSingleAuthor{#1}}
+\newcommand{\multAuthors}[1]{\def\insertMultAuthor{#1}}
 \newcommand{\AuthorInstitute}[1]{\def \insertAuthorInstitute {\ifstrempty{#1}{}{\\#1}}}
 \newcommand{\Supervisors}[1]{\def \insertSupervisors {\ifstrempty{#1}{}{\\{\and} \\{\textit{Supervisor(s):}} \\#1}}}
 \newcommand{\Collaborators}[1]{\def \insertCollaborators {\ifstrempty{#1}{}{\\{\and} \\{\textit{Collaborator(s):}} \\#1}}}
-\Author{} %default value
+\singleAuthor{} %default value
+\multAuthors{} %default value
 \AuthorInstitute{} %default value
 \Supervisors{} %default value
 \Collaborators{} %default value
+
+\newcommand{\insertAuthor}[0]{\ifx\insertSingleAuthor\empty\insertMultAuthor\else\insertSingleAuthor\fi}
 
 \author{\insertAuthor\insertAuthorInstitute\insertCollaborators\insertSupervisors}
 
@@ -226,7 +231,7 @@
     \useBackground
     \begin{textblock*}{2.5cm}[0.5,0.5](14.75cm,0.35cm)
         \begin{center}
-            \usebeamerfont{author}\scriptsize\textcolor{ur-grey}{\insertAuthor}
+            \usebeamerfont{author}\scriptsize\textcolor{ur-grey}{\insertSingleAuthor}
         \end{center}
     \end{textblock*}
 }
