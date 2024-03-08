@@ -11,8 +11,7 @@
 
 # Overview
 ## Slides: Example with the Fakultät für Informatik
-![Intro slide - Info](md-image/Intro-Info.png)
-![overview scheme - Info](md-image/view-Info.png)
+
 ## Tikz style: todo
 
 # Color schemes
