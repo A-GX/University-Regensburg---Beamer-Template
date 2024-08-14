@@ -128,9 +128,9 @@
 %\setbeamercolor{background canvas}{bg=ur-background-grey}
 \defbeamertemplate{background}{background-body}{
     \useBackground
-    \begin{textblock*}{2.5cm}[0.5,0.5](14.75cm,0.35cm)
+    \begin{textblock*}{2.5cm}[0.5,0.5](14.75cm,0.5cm)
         \begin{center}
-            \usebeamerfont{author}\scriptsize\textcolor{ur-grey}{\insertSingleAuthor}
+            \usebeamerfont{author}\scriptsize\textcolor{black}{\insertSingleAuthor}
         \end{center}
     \end{textblock*}
 }
@@ -162,7 +162,7 @@
     \pretocmd\beamer@checkframetitle{\framesubtitle{\ifx\insertsection\empty {} \else {\thesection \, \secname} \fi}}
 \makeatother
 
-% #===> STYLE BACK MATTER
+% #===> STYLE BACK MATTER \insertAuthor
 
 \newcommand{\backmatter}[1][]{
     \begingroup
@@ -170,9 +170,18 @@
     \setbeamertemplate{background}{\useBackgroundBack}
     
     \begin{frame}
+
     \begin{textblock*}{16cm}[0.5,0.5](8cm,4.5cm)
         \begin{center}
         {\begin{tabularx}{0.8\paperwidth}{>{\centering\arraybackslash}X}
+        {\bfseries 
+        \usebeamerfont{subtitle}\textcolor{white}{%
+        \textpdfrender{
+            TextRenderingMode=FillStroke,
+            FillColor=white,
+            LineWidth=.05ex,
+            }{\insertAuthor}}} \\
+            \\
         {\bfseries 
         \usebeamerfont{title}\textcolor{white}{%
         \textpdfrender{
