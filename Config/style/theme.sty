@@ -32,65 +32,84 @@
 
 % #===> CREATE UR-THEME COLOR
 \newcommand{\themecolor}[1]{
-	\ifstrequal{#1}{Informatik-Psycho}{%
-        \MainColor{ur-Informatik-Psycho}
-        \BlockMainColor{urBlock-Informatik-Psycho-main}
+	\ifstrequal{#1}{Informatik}{%
+        \MainColor{ur-Informatik}
+        \BlockMainColor{urBlock-Informatik-main}
         \BlockTitleWriteColor{black}
-        \BlockTitleColor{urBlock-Informatik-Psycho-title}
-	}{\ifstrequal{#1}{Theologie}{
+        \BlockTitleColor{urBlock-Informatik-title}
+	}
+    {\ifstrequal{#1}{Humanwissenschaft}{
+        \MainColor{ur-Humanwissenschaft}
+        \BlockMainColor{urBlock-Humanwissenschaft-main}
+        \BlockTitleWriteColor{black}
+        \BlockTitleColor{urBlock-Humanwissenschaft-title}
+    }
+    {\ifstrequal{#1}{Theologie}{
         \MainColor{ur-Theologie}
         \BlockMainColor{urBlock-Theologie-main}
         \BlockTitleWriteColor{black}
         \BlockTitleColor{urBlock-Theologie-title}
-        }{\ifstrequal{#1}{Wirtschafts}{
-            \MainColor{ur-Wirtschafts}
-            \BlockMainColor{urBlock-Wirtschafts-main}
-            \BlockTitleWriteColor{black}
-            \BlockTitleColor{urBlock-Wirtschafts-title}
-            }{\ifstrequal{#1}{Medizin}{
-                \MainColor{ur-Medizin}
-                \BlockMainColor{urBlock-Medizin-main}
-                \BlockTitleWriteColor{white}
-                \BlockTitleColor{urBlock-Medizin-title}
-                }{\ifstrequal{#1}{Orange}{
-                    \MainColor{ur-orange}
-                    \BlockMainColor{urBlock-orange-main}
-                    \BlockTitleWriteColor{white}
-                    \BlockTitleColor{urBlock-orange-title}
-                    }{\ifstrequal{#1}{BlueGreen}{
-                        \MainColor{ur-blueGreen}
-                        \BlockMainColor{urBlock-blueGreen-main}
-                        \BlockTitleWriteColor{white}
-                        \BlockTitleColor{urBlock-blueGreen-title}
-                        }{\ifstrequal{#1}{Green}{
-                            \MainColor{ur-green}
-                            \BlockMainColor{urBlock-green-main}
-                            \BlockTitleWriteColor{white}
-                            \BlockTitleColor{urBlock-green-title}
-                            }{\ifstrequal{#1}{Blue}{
-                                \MainColor{ur-blue}
-                                \BlockMainColor{urBlock-blue-main}
-                                \BlockTitleWriteColor{white}
-                                \BlockTitleColor{urBlock-blue-title}
-                                }{\ifstrequal{#1}{Test}{
-                                    \MainColor{ur-test}
-                                    \BlockMainColor{urBlock-test-main}
-                                    \BlockTitleWriteColor{black}
-                                    \BlockTitleColor{urBlock-test-title}
-                                    }{% else: Black&White
-                                        \MainColor{black}
-                                        \BlockTitleColor{ur-grey}
-                                        \BlockTitleWriteColor{ur-background-grey}
-                                        \BlockMainColor{white}
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-	}
     }
+    {\ifstrequal{#1}{Wirtschafts}{
+        \MainColor{ur-Wirtschafts}
+        \BlockMainColor{urBlock-Wirtschafts-main}
+        \BlockTitleWriteColor{black}
+        \BlockTitleColor{urBlock-Wirtschafts-title}
+    }
+    {\ifstrequal{#1}{Medizin}{
+        \MainColor{ur-Medizin}
+        \BlockMainColor{urBlock-Medizin-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-Medizin-title}
+    }%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {\ifstrequal{#1}{Recht}{
+        \MainColor{ur-Recht}
+        \BlockMainColor{urBlock-Recht-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-Recht-title}
+    }
+    {\ifstrequal{#1}{Philosophie}{
+        \MainColor{ur-Philosophie}
+        \BlockMainColor{urBlock-Philosophie-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-Philosophie-title}
+    }
+    {\ifstrequal{#1}{Chemie}{
+        \MainColor{ur-Chemie}
+        \BlockMainColor{urBlock-Chemie-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-Chemie-title}
+    }
+    {\ifstrequal{#1}{Mathematik}{
+        \MainColor{ur-Mathematik}
+        \BlockMainColor{urBlock-Mathematik-main}
+        \BlockTitleWriteColor{white}
+        \BlockTitleColor{urBlock-Mathematik-title}
+    }
+    {\ifstrequal{#1}{Literatur}{
+        \MainColor{ur-Literatur}
+        \BlockMainColor{urBlock-Literatur-main}
+        \BlockTitleWriteColor{black}
+        \BlockTitleColor{urBlock-Literatur-title}
+    }
+    {\ifstrequal{#1}{Physik}{
+        \MainColor{ur-Physik}
+        \BlockMainColor{urBlock-Physik-main}
+        \BlockTitleWriteColor{black}
+        \BlockTitleColor{urBlock-Physik-title}
+    }
+    {\ifstrequal{#1}{Biologie}{
+        \MainColor{ur-Biologie}
+        \BlockMainColor{urBlock-Biologie-main}
+        \BlockTitleWriteColor{black}
+        \BlockTitleColor{urBlock-Biologie-title}
+    }
+    {% else: Black&White
+        \MainColor{black}
+        \BlockTitleColor{ur-grey}
+        \BlockTitleWriteColor{ur-background-grey}
+        \BlockMainColor{white}
+    }}}}}}}}}}}}
 }
 \themecolor{Black&White}
 
