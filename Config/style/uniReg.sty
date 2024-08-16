@@ -45,7 +45,7 @@
 \Supervisors{} %default value
 \Collaborators{} %default value
 
-\newcommand{\insertAuthor}[0]{\ifx\insertSingleAuthor\empty\insertMultAuthor\else\insertSingleAuthor\fi}
+\newcommand{\insertAuthor}[0]{\ifx\insertMultAuthor\empty\insertSingleAuthor\else\insertMultAuthor\fi}
 
 \author{\insertAuthor\insertAuthorInstitute\insertCollaborators\insertSupervisors}
 
