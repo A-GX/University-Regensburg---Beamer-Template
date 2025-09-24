@@ -32,6 +32,8 @@
 \setbeamertemplate{itemize subitem}{\color{black}\ensuremath{\circ}}
 \setbeamertemplate{itemize subsubitem}{\color{black}\ensuremath{\diamond}}
 
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
 
 % #==> STYLE TITLE PAGE
 \newcommand{\singleAuthor}[1]{\def\insertSingleAuthor{#1}}
